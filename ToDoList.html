@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList_20246007</title>
+</head>
+<body>
+
+    <h1>ToDoList_20246007</h1>
+
+    <input 
+        type="text" 
+        id="inputTugas" 
+        placeholder="Masukkan tugas baru"
+    >
+
+    <button onclick="tambahTugas()">Tambah Tugas</button>
+
+    <ul id="daftarTugas"></ul>
+
+    <script>
+        // Fungsi untuk menambahkan tugas
+        function tambahTugas() {
+
+            let inputTugas = document.getElementById("inputTugas");
+            let tugas = inputTugas.value;
+
+            if (tugas.trim() !== "") {
+
+                let item = document.createElement("li");
+                item.textContent = tugas;
+
+                document.getElementById("daftarTugas").appendChild(item);
+
+                inputTugas.value = "";
+
+            } else {
+
+                alert("Tugas tidak boleh kosong!");
+
+            }
+        }
+    </script>
+
+</body>
+</html>
