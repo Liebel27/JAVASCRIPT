@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Stopwatch 20246007</title>
+</head>
+<body>
+
+    <h1>Second Stopwatch 20246007</h1>
+
+    <h2 id="waktu">0</h2>
+
+    <button onclick="mulaiStopwatch()">Start</button>
+    <button onclick="hentikanStopwatch()">Stop</button>
+    <button onclick="resetStopwatch()">Reset</button>
+
+    <script>
+        let detik = 0;
+        let interval = null;
+
+        // Fungsi untuk memulai stopwatch
+        function mulaiStopwatch() {
+            if (interval === null) {
+                interval = setInterval(function() {
+                    detik++;
+                    document.getElementById("waktu").textContent = detik;
+                }, 1000);
+            }
+        }
+
+        // Fungsi untuk menghentikan stopwatch
+        function hentikanStopwatch() {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        // Fungsi untuk mengatur ulang stopwatch
+        function resetStopwatch() {
+            clearInterval(interval);
+            interval = null;
+            detik = 0;
+            document.getElementById("waktu").textContent = detik;
+        }
+    </script>
+
+</body>
+</html>
